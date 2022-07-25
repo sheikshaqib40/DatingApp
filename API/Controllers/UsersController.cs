@@ -25,7 +25,7 @@ namespace API.Controllers
         }
         #endregion
 
-        // #region Syncronous Code To get UserDetails
+        #region Syncronous Code To get UserDetails
         // [HttpGet]
         // //<IEnumerable> is a simple list with no methods like search sort etc which are there for <List>
         // public ActionResult<IEnumerable<AppUser>> GetUsers()
@@ -39,7 +39,7 @@ namespace API.Controllers
         // {
         //     return _context.Users.Find(id);
         // }
-        // #endregion
+        #endregion
 
         #region Asyncronous Code To get UserDetails
         [HttpGet]
