@@ -4,15 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     //to get to this controller , api/users
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         #region  Fields
         private readonly DataContext _context;
@@ -42,6 +41,7 @@ namespace API.Controllers
         #endregion
 
         #region Asyncronous Code To get UserDetails
+        [Authorize] //needs authentication to access
         [HttpGet]
         //<IEnumerable> is a simple list with no methods like search sort etc which are there for <List>
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
@@ -50,6 +50,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
+        // [AllowAnonymous] to allow anonymous access
         //id is a required parameter api/users/2
         public async Task<ActionResult<AppUser>> GetUserById(int id)
         {
