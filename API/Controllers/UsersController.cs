@@ -41,7 +41,7 @@ namespace API.Controllers
         #endregion
 
         #region Asyncronous Code To get UserDetails
-        [Authorize] //needs authentication to access
+        // [Authorize] //needs authentication to access
         [HttpGet]
         //<IEnumerable> is a simple list with no methods like search sort etc which are there for <List>
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
