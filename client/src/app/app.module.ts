@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ToastrModule } from 'ngx-toastr'
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,//to http request the API
     BrowserAnimationsModule, // added by bootstrap addition
     FormsModule,
-    BsDropdownModule.forRoot() //forRoot - initializes additional services related to the import
+    SharedModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
